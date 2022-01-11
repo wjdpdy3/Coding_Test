@@ -1,13 +1,16 @@
 n = int(input())
 data = list(map(int, input().split()))
 
-data.sort(reverse=True)
+data.sort()
 
 result = 0
-i=0
-while(i<n):
-    result += 1
-    i += data[i]
+count = 0
 
+for i in data:
+    count += 1
+    if count>=i:
+        result+=1
+        count=0
+        
 print(result)
 
